@@ -10,6 +10,7 @@ pipeline{
             stage('run container'){
                 steps{
                     sh "./run.sh"
+		}	
             }
 	    stage('log into Nexus'){
 		steps{
@@ -20,6 +21,7 @@ pipeline{
                 steps{
                     sh "./uploadFlask.sh"
                 }
+	    }    
 	    stage('upload mysql image'){
                 steps{
                     sh "./uploadmysql.sh"
@@ -27,6 +29,4 @@ pipeline{
 	    
             }
         }    
-}
-}
 }
