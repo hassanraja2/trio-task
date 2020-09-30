@@ -1,11 +1,7 @@
 pipeline{
         agent any
         stages{
-	    stage('log into Nexus'){
-		steps{
-		    sh "./login.sh"	
-		}
-	    }
+	    
             stage('build image'){
                 steps{
                     sh "./build.sh"
@@ -15,6 +11,11 @@ pipeline{
                 steps{
                     sh "./run.sh"
                 }
+	    stage('log into Nexus'){
+		steps{
+		    sh "./login.sh"	
+		}
+	    }    
 	    stage('upload flask-app image'){
                 steps{
                     sh "./uploadFlask.sh"
