@@ -10,6 +10,11 @@ pipeline{
                 steps{
                     sh "./run.sh"
                 }
+	    stage('log into Nexus'){
+		steps{
+		    sh "./login.sh"	
+		}
+	}
             }
         }    
 }
