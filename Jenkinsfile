@@ -10,7 +10,7 @@ pipeline{
             stage('run container'){
                 steps{
                     sh "./run.sh"
-                }
+            }
 	    stage('log into Nexus'){
 		steps{
 		    sh "./login.sh"	
